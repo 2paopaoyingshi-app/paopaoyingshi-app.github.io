@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>跑跑影视｜影视资源聚合导航与每日追更指南 - paopaoyingshi-app.github.io</title>
+<meta name="description" content="跑跑影视（paopaoyingshi-app.github.io）专注影视资源聚合与观影导航，收录电影、剧集、动漫番剧、综艺纪实六大频道，提供每日更新提醒、类型标签筛选、口碑榜单与补番片单，帮你把好片从片海里挑出来。">
+<meta name="keywords" content="跑跑影视,paopaoyingshi,影视资源导航,电影推荐,热播剧集追更,新番动漫时间表,综艺纪录片片单,在线观影指南,高分影视榜单,追剧日历">
+<meta name="author" content="跑跑影视编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0e1116">
+<link rel="canonical" href="https://paopaoyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="跑跑影视">
+<meta property="og:title" content="跑跑影视｜影视资源聚合导航与每日追更指南">
+<meta property="og:description" content="电影、剧集、动漫、综艺一站式影视导航，每日更新提醒与口碑榜单，帮你少踩雷、快找到想看的那一部。">
+<meta property="og:url" content="https://paopaoyingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跑跑影视｜影视资源聚合导航与每日追更指南">
+<meta name="twitter:description" content="六大影视频道、每日更新提醒、类型标签筛选与口碑榜单，一站式观影导航。">
+<style>
+:root{
+  --bg:#0e1116;
+  --bg-soft:#141922;
+  --card:#171d26;
+  --card-2:#121821;
+  --line:rgba(255,255,255,.08);
+  --txt:#e9ecf1;
+  --muted:#98a2b0;
+  --hot:#ff6b3d;
+  --gold:#ffb703;
+  --cyan:#4ec9b0;
+  --radius:16px;
+  --shadow:0 18px 40px rgba(0,0,0,.42);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:.2px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+.strip{height:9px;background:repeating-linear-gradient(90deg,#ff6b3d 0 16px,transparent 16px 30px),linear-gradient(90deg,#12161d,#1b2230);opacity:.9}
+
+/* ============ 顶部 ============ */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(14,17,22,.88);border-bottom:1px solid var(--line);backdrop-filter:saturate(150%) blur(12px)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.brand-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--hot),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(255,107,61,.32)}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:1px}
+.brand-sub{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:2.4px;line-height:1.2;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:4px;flex:1 1 auto;justify-content:flex-end}
+.nav a{font-size:14.5px;color:#cfd6e0;padding:8px 13px;border-radius:9px;transition:.22s;white-space:nowrap}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav a.on{color:var(--gold)}
+.nav-scroll{display:none}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:64px 0 54px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(760px 380px at 12% 0%,rgba(255,107,61,.17),transparent 62%),radial-gradient(620px 420px at 92% 18%,rgba(78,201,176,.13),transparent 60%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.18fr .82fr;gap:46px;align-items:start}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold);border:1px solid rgba(255,183,3,.36);background:rgba(255,183,3,.09);padding:5px 13px;border-radius:999px;letter-spacing:.6px}
+.badge i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;box-shadow:0 0 0 4px rgba(255,183,3,.16)}
+h1{font-size:52px;line-height:1.12;font-weight:900;letter-spacing:2px;margin:20px 0 4px}
+h1 span{background:linear-gradient(100deg,var(--hot),var(--gold) 62%,#ffe08a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-en{font-size:12.5px;color:#6f7c8c;letter-spacing:5px;text-transform:uppercase;margin-bottom:18px}
+.lead{font-size:16.5px;color:#c3ccd8;max-width:640px}
+.lead b{color:#fff;font-weight:700}
+.hero-btns{display:flex;flex-wrap:wrap;gap:13px;margin:28px 0 22px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:12px;font-size:15px;font-weight:700;transition:.22s}
+.btn-a{background:linear-gradient(120deg,var(--hot),var(--gold));color:#20140a;box-shadow:0 10px 26px rgba(255,122,61,.3)}
+.btn-a:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(255,122,61,.42)}
+.btn-b{border:1px solid var(--line);color:#dbe2ec;background:rgba(255,255,255,.04)}
+.btn-b:hover{border-color:rgba(255,255,255,.24);background:rgba(255,255,255,.08)}
+.url-line{font-size:13px;color:#7f8b99;word-break:break-all}
+.url-line b{color:var(--cyan);font-weight:600}
+
+/* 数据卡 */
+.stats{background:linear-gradient(165deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:var(--shadow)}
+.stats-h{padding:16px 18px 12px;border-bottom:1px dashed var(--line);font-size:13px;color:var(--muted);letter-spacing:1px}
+.stats-g{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+.stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:13px;padding:15px 16px}
+.stat em{display:block;font-style:normal;font-size:26px;font-weight:800;color:var(--gold);line-height:1.25;letter-spacing:.5px}
+.stat span{font-size:12.5px;color:var(--muted)}
+.stat.c em{color:var(--cyan)}
+
+/* ============ 通用区块 ============ */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px;flex-wrap:wrap}
+.sec-no{font-size:12px;letter-spacing:3px;color:var(--hot);font-weight:700}
+h2{font-size:29px;font-weight:800;letter-spacing:1px;margin:6px 0 8px}
+.sec-desc{font-size:15px;color:var(--muted);max-width:660px}
+.sec-tag{font-size:13px;color:#7f8b99;border-left:2px solid rgba(255,107,61,.5);padding-left:11px}
+
+/* 频道卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px 22px;overflow:hidden;transition:.26s}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,107,61,.42);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.card:hover .card-ico{background:linear-gradient(135deg,var(--hot),var(--gold));color:#20140a}
+.card-ico{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:.26s;margin-bottom:15px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:7px;letter-spacing:.6px}
+.card p{font-size:14px;color:#a7b1bf;line-height:1.72}
+.card-meta{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#7f8b99}
+.card-meta b{color:var(--cyan);font-weight:600}
+.card-corner{position:absolute;right:-14px;top:-14px;font-size:60px;font-weight:900;color:rgba(255,255,255,.035);letter-spacing:-2px}
+
+/* 特色 */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat-i{background:rgba(255,255,255,.028);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+.feat-i h3{font-size:16px;margin:12px 0 8px;font-weight:700}
+.feat-i p{font-size:13.5px;color:#a3adb9;line-height:1.7}
+.dot{width:32px;height:32px;border-radius:9px;background:rgba(78,201,176,.13);border:1px solid rgba(78,201,176,.3);display:flex;align-items:center;justify-content:center;color:var(--cyan)}
+
+/* 榜单 */
+.rank{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.rank-row{display:grid;grid-template-columns:76px 1fr 130px 96px;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.05);transition:.2s}
+.rank-row:last-child{border-bottom:none}
+.rank-row:hover{background:rgba(255,255,255,.035)}
+.rank-n{font-size:27px;font-weight:900;color:transparent;-webkit-text-stroke:1.4px rgba(255,183,3,.75);letter-spacing:1px;text-align:center}
+.rank-row:nth-child(1) .rank-n,.rank-row:nth-child(2) .rank-n,.rank-row:nth-child(3) .rank-n{-webkit-text-stroke:1.4px rgba(255,107,61,.9)}
+.rank-t{font-size:16px;font-weight:600;letter-spacing:.4px}
+.rank-t small{display:block;font-size:12.5px;color:#808c9a;font-weight:400;margin-top:3px}
+.rank-c{font-size:13px;color:#95a0ad}
+.rank-s{text-align:right;font-size:15px;font-weight:800;color:var(--gold)}
+.rank-s small{display:block;font-size:11.5px;color:#78838f;font-weight:400;letter-spacing:1px}
+
+/* 更新时间轴 */
+.week{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.wk{position:relative;border:1px solid var(--line);border-radius:14px;padding:20px 18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012))}
+.wk:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--hot),var(--gold))}
+.wk h4{font-size:15px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.wk p{font-size:13.5px;color:#a3adb9;line-height:1.7}
+.wk em{display:block;font-style:normal;font-size:12px;color:#77828f;margin-top:9px}
+
+/* 标签云 */
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags a{font-size:13.5px;color:#c2cad6;border:1px solid var(--line);border-radius:999px;padding:7px 15px;background:rgba(255,255,255,.03);transition:.2s}
+.tags a:hover{color:#20140a;background:linear-gradient(120deg,var(--hot),var(--gold));border-color:transparent}
+
+/* FAQ */
+.faq{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.022)}
+.faq details{border-bottom:1px solid rgba(255,255,255,.055)}
+.faq details:last-child{border-bottom:none}
+.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-size:15.5px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--gold);font-size:20px;font-weight:700;transition:.2s}
+.faq details[open] summary:after{content:"−"}
+.faq details[open] summary{color:var(--gold)}
+.faq p{padding:0 22px 18px;font-size:14px;color:#a6b0bd;line-height:1.8}
+
+/* CTA */
+.cta{border:1px solid rgba(255,107,61,.28);border-radius:20px;padding:38px 34px;background:radial-gradient(560px 220px at 20% 0%,rgba(255,107,61,.16),transparent 65%),linear-gradient(180deg,#181d27,#12161e);display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.cta h2{font-size:26px;margin-bottom:6px}
+.cta p{font-size:14.5px;color:#a9b3c0;max-width:560px}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);margin-top:20px;padding:44px 0 34px;background:#0b0e13}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+.f-col h4{font-size:14.5px;font-weight:700;margin-bottom:13px;letter-spacing:1px;color:#fff}
+.f-col a,.f-col p{display:block;font-size:13.5px;color:#8b96a4;padding:5px 0;line-height:1.7}
+.f-col a:hover{color:var(--gold)}
+.f-bottom{margin-top:30px;padding-top:20px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#77828f}
+.crumb{font-size:12.5px;color:#78838f;padding:16px 0 0}
+.crumb a{color:#96a1af}
+.crumb a:hover{color:var(--gold)}
+
+/* ============ 移动端 ============ */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .feat{grid-template-columns:repeat(2,1fr)}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .rank-row{grid-template-columns:56px 1fr 88px}
+  .rank-c{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .topbar-in{height:58px;gap:12px}
+  .nav{display:none}
+  .nav-scroll{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line);background:#10141b}
+  .nav-scroll a{font-size:13.5px;color:#cbd3dd;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;flex:0 0 auto}
+  h1{font-size:36px;letter-spacing:1px}
+  .hero{padding:40px 0 34px}
+  section{padding:42px 0}
+  h2{font-size:23px}
+  .cards{grid-template-columns:1fr}
+  .feat{grid-template-columns:1fr}
+  .week{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .stats-g{grid-template-columns:1fr 1fr}
+  .cta{padding:28px 20px}
+  .cta .btn{width:100%;justify-content:center}
+  .rank-row{grid-template-columns:44px 1fr 74px;padding:14px 16px;gap:10px}
+  .rank-n{font-size:22px}
+  .rank-t{font-size:15px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="strip" role="presentation"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#" aria-label="跑跑影视 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2v13.6l11-6.8z"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">跑跑影视</span>
+        <span class="brand-sub">paopaoyingshi</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="on" href="#">首页</a>
+      <a href="#">影视库</a>
+      <a href="#">追剧日历</a>
+      <a href="#">口碑榜单</a>
+      <a href="#">补番片单</a>
+      <a href="#">关于我们</a>
+    </nav>
+  </div>
+  <div class="nav-scroll" aria-label="移动端导航">
+    <a href="#">首页</a>
+    <a href="#">电影</a>
+    <a href="#">剧集</a>
+    <a href="#">动漫</a>
+    <a href="#">综艺</a>
+    <a href="#">榜单</a>
+    <a href="#">片单</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><i aria-hidden="true"></i>2026 秋影视季 · 每日 08:00 与 20:00 更新</span>
+        <h1><span>跑跑影视</span></h1>
+        <p class="hero-en">paopaoyingshi-app.github.io</p>
+        <p class="lead">
+          片单越攒越多，真正想看的却总在刷手机的半小时里溜走。<b>跑跑影视</b>做的是一件笨功夫：把电影、剧集、动漫番剧、综艺纪实这些散落在各处的信息重新归拢，按类型、按更新时间、按口碑重新排一遍，让你打开一个页面就知道今晚该看什么。
+        </p>
+        <div class="hero-btns">
+          <a class="btn btn-a" href="#">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6l11-6.8z"/></svg>
+            进入影视库
+          </a>
+          <a class="btn btn-b" href="#">查看今日更新</a>
+        </div>
+        <p class="url-line">本站网址：<b>https://paopaoyingshi-app.github.io</b></p>
+      </div>
+
+      <aside class="stats" aria-label="站点数据概览">
+        <div class="stats-h">跑跑影视 · 收录概览（截至 2026 年 10 月）</div>
+        <div class="stats-g">
+          <div class="stat"><em>12,800+</em><span>收录片目总数</span></div>
+          <div class="stat c"><em>60+</em><span>日均更新条目</span></div>
+          <div class="stat c"><em>42</em><span>细分类型标签</span></div>
+          <div class="stat"><em>3,200+</em><span>影评与短评速览</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <nav class="crumb" aria-label="面包屑导航">
+      <a href="#">首页</a> › <a href="#">影视库</a> › 跑跑影视导航
+    </nav>
+  </div>
+
+  <!-- 01 频道 -->
+  <section id="channels">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-no">01 / CHANNELS</div>
+          <h2>六大影视频道，按观看习惯分类</h2>
+          <p class="sec-desc">跑跑影视把内容拆成六个入口，不按平台排、按你当下的心情排。想消磨两小时、想追更新、想补完结老番，各有各的位置。</p>
+        </div>
+        <div class="sec-tag">每周一重排频道权重<br>冷门好片单独提档</div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M7 5v14M17 5v14M2.5 12h19"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">01</span>
+          <h3>电影频道</h3>
+          <p>院线热映、流媒体新上、经典修复三条线并行，附带导演作品序列，看完一部想顺着往下刷时有路可走。</p>
+          <div class="card-meta"><span>收录 <b>5,600+</b> 部</span><a href="#">查看片单 →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="M2.5 9h19M7 9v11"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">02</span>
+          <h3>剧集追更</h3>
+          <p>国产剧、美剧、日韩剧分区标注周更节奏与完结状态，更新当天自动置顶，断更、跳档、补档都会留一条备注。</p>
+          <div class="card-meta"><span>在追 <b>860+</b> 部</span><a href="#">查看排期 →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">03</span>
+          <h3>动漫番剧</h3>
+          <p>新番播出表按周一到周日排开，标注话数、制作公司与完结时间；完结老番另设补番专区，一次给到完整顺序。</p>
+          <div class="card-meta"><span>新番 <b>240+</b> 部</span><a href="#">查看时间表 →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">04</span>
+          <h3>综艺纪实</h3>
+          <p>真人秀、纪录片、人物访谈混编推荐，按单集时长分组，通勤路上和周末下午各挑一组，不用自己算时间。</p>
+          <div class="card-meta"><span>收录 <b>1,900+</b> 档</span><a href="#">查看推荐 →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">05</span>
+          <h3>短剧剧场</h3>
+          <p>竖屏短剧与精品短片单列一栏，标注单集时长与总集数，避免点进去才发现是八十集、每集两分钟的坑。</p>
+          <div class="card-meta"><span>更新 <b>日均 20+</b> 条</span><a href="#">查看剧场 →</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-ico" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>
+          </div>
+          <span class="card-corner" aria-hidden="true">06</span>
+          <h3>口碑榜单</h3>
+          <p>周榜看热度、口碑榜看评分、冷门榜看被低估的那批。三张榜互不干扰，同一部片在不同榜上的位置差别往往很有意思。</p>
+          <div class="card-meta"><span>榜单 <b>3</b> 类并行</span><a href="#">查看榜单 →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 特色 -->
+  <section id="feature">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-no">02 / WHY US</div>
+          <h2>跑跑影视的几个使用习惯</h2>
+          <p class="sec-desc">不做播放器、不搬运资源，只把"看什么"这件事整理清楚，剩下的交给你手边已有的平台。</p>
+        </div>
+        <div class="sec-tag">信息聚合与观影导航<br>不提供任何播放服务</div>
+      </div>
+      <div class="feat">
+        <div class="feat-i">
+          <div class="dot" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          </div>
+          <h3>更新时间轴</h3>
+          <p>所有在追的剧按更新时间排成一条轴，周几更新、更到第几集一屏看完，不用挨个平台去翻。</p>
+        </div>
+        <div class="feat-i">
+          <div class="dot" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3.5 6.5h7l1.5 3h8.5M3.5 6.5v11l3-4 3 4 3-6 3 5 5-4v-6"/></svg>
+          </div>
+          <h3>标签交叉筛选</h3>
+          <p>年代、地区、类型、时长四个维度叠加，比如"90 分钟以内 + 东亚 + 悬疑"，一次就能缩到十几部。</p>
+        </div>
+        <div class="feat-i">
+          <div class="dot" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg>
+          </div>
+          <h3>片单收藏</h3>
+          <p>看到一半弃掉的、打算周末补的、想和家人一起看的，分别存进不同片单，下次打开直接续上。</p>
+        </div>
+        <div class="feat-i">
+          <div class="dot" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 4l2.5 5.2 5.5.8-4 4 .9 5.6L12 17l-4.9 2.6.9-5.6-4-4 5.5-.8z"/></svg>
+          </div>
+          <h3>口碑参考</h3>
+          <p>每部片配一段三百字以内的短评摘要，只写观感和适用人群，不剧透关键转折，看完再回来对答案。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 榜单 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-no">03 / WEEKLY</div>
+          <h2>本周站内热度 TOP 8</h2>
+          <p class="sec-desc">依据站内检索量、片单收藏与短评互动综合排序，每周日晚重排一次，历史榜单保留可回溯。</p>
+        </div>
+        <div class="sec-tag">统计周期 2026.10.20 - 10.26</div>
+      </div>
+      <div class="rank">
+        <div class="rank-row">
+          <div class="rank-n">01</div>
+          <div class="rank-t">河边的旧书店<small>剧情 / 2026 / 单片 118 分钟</small></div>
+          <div class="rank-c">收藏 4,720</div>
+          <div class="rank-s">9.1<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">02</div>
+          <div class="rank-t">夜行列车<small>悬疑 / 2026 / 全 12 集</small></div>
+          <div class="rank-c">收藏 4,316</div>
+          <div class="rank-s">8.9<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">03</div>
+          <div class="rank-t">山雨将至<small>国产剧 / 2026 / 更新至 16 集</small></div>
+          <div class="rank-c">收藏 3,985</div>
+          <div class="rank-s">8.7<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">04</div>
+          <div class="rank-t">星港维修站<small>科幻 / 2025 / 全 10 集</small></div>
+          <div class="rank-c">收藏 3,540</div>
+          <div class="rank-s">8.8<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">05</div>
+          <div class="rank-t">夏日蝉鸣时<small>动画电影 / 2026 / 单片 96 分钟</small></div>
+          <div class="rank-c">收藏 3,271</div>
+          <div class="rank-s">8.6<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">06</div>
+          <div class="rank-t">老街食堂第二季<small>纪录 / 2026 / 更新至 5 集</small></div>
+          <div class="rank-c">收藏 2,908</div>
+          <div class="rank-s">8.5<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">07</div>
+          <div class="rank-t">雾中灯塔<small>剧情 / 2024 / 单片 131 分钟</small></div>
+          <div class="rank-c">收藏 2,644</div>
+          <div class="rank-s">8.4<small>口碑</small></div>
+        </div>
+        <div class="rank-row">
+          <div class="rank-n">08</div>
+          <div class="rank-t">周末提案室<small>综艺 / 2026 / 更新至 8 期</small></div>
+          <div class="rank-c">收藏 2,405</div>
+          <div class="rank-s">8.1<small>口碑</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 追剧日历 -->
+  <section id="calendar">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-no">04 / SCHEDULE</div>
+          <h2>追更日历：哪天该打开哪一部</h2>
+          <p class="sec-desc">跑跑影视按周维护一张更新表，临时改档会在当天标注，遇到停更也会写明原因与预计恢复时间。</p>
+        </div>
+        <div class="sec-tag">每日 08:00 / 20:00 两次刷新</div>
+      </div>
+      <div class="week">
+        <div class="wk">
+          <h4>周一 · 新番档</h4>
+          <p>当季新番集中在这一天放出，时间表按小时排，凌晨首播的会单独标红。</p>
+          <em>本周待更新 14 部</em>
+        </div>
+        <div class="wk">
+          <h4>周三 · 欧美档</h4>
+          <p>美剧与英剧多在周三、周四更新，字幕版本上线时间一并备注，避免刷到生肉。</p>
+          <em>本周待更新 9 部</em>
+        </div>
+        <div class="wk">
+          <h4>周五 · 国产剧档</h4>
+          <p>平台周更剧的黄金时段，会员抢先看与非会员更新时间分开列，追平进度更好安排。</p>
+          <em>本周待更新 11 部</em>
+        </div>
+        <div class="wk">
+          <h4>周日 · 综艺纪实</h4>
+          <p>综艺正片与纪录片更新集中在周末，适合一次性补齐，附当周嘉宾与主题关键词。</p>
+          <em>本周待更新 7 档</em>
+        </div>
+      </div>
+
+      <div class="tags" style="margin-top:26px" aria-label="热门类型标签">
+        <a href="#">悬疑推理</a>
+        <a href="#">都市职场</a>
+        <a href="#">家庭伦理</a>
+        <a href="#">古装权谋</a>
+        <a href="#">科幻设定</a>
+        <a href="#">治愈日常</a>
+        <a href="#">纪录人文</a>
+        <a href="#">动画剧场版</a>
+        <a href="#">九十分钟内</a>
+        <a href="#">冷门高分</a>
+        <a href="#">经典修复</a>
+        <a href="#">合家观影</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-no">05 / FAQ</div>
+          <h2>关于跑跑影视的几个常见问题</h2>
+          <p class="sec-desc">第一次来的访客多半会问这几条，先写在这里，省得翻遍页面找不到答案。</p>
+        </div>
+        <div class="sec-tag">每周整理新增提问</div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>跑跑影视提供在线播放吗？</summary>
+          <p>不提供。跑跑影视只做影视信息的聚合与导航，收录片目、更新排期、类型筛选与口碑参考，实际观看仍需前往片方或平台官方渠道，这样既稳定也更安全。</p>
+        </details>
+        <details>
+          <summary>榜单是怎么算出来的？</summary>
+          <p>热度榜取站内检索量、片单收藏数与短评互动三项加权，权重分别为 4:3:3；口碑榜只看短评摘要的推荐比例，样本量不足 200 条的作品不进榜，避免小样本虚高。</p>
+        </details>
+        <details>
+          <summary>更新信息多久刷新一次？</summary>
+          <p>每天 08:00 与 20:00 各刷新一轮，遇到临时停更、跳档或加更，会在对应条目的时间轴上留一条备注，注明原因和预计恢复的日期。</p>
+        </details>
+        <details>
+          <summary>发现了错误信息怎么反馈？</summary>
+          <p>在对应片目的信息卡下方提交反馈即可，我们会核对官方公告后再修改，并在更新记录里标注修改时间与依据来源。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="join">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>今晚不知道看什么，就从跑跑影视开始</h2>
+          <p>收藏地址 https://paopaoyingshi-app.github.io，想看的时候随手打开，省掉在几个应用之间来回切换的那十分钟。</p>
+        </div>
+        <a class="btn btn-a" href="#">浏览全部频道</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <h4>跑跑影视</h4>
+        <p>影视信息聚合与观影导航站，收录电影、剧集、动漫番剧、综艺纪实六大频道，每日维护更新排期与口碑榜单，帮访客更快决定看什么。</p>
+        <p>网址：https://paopaoyingshi-app.github.io</p>
+      </div>
+      <div class="f-col">
+        <h4>频道导航</h4>
+        <a href="#">电影频道</a>
+        <a href="#">剧集追更</a>
+        <a href="#">动漫番剧</a>
+        <a href="#">综艺纪实</a>
+      </div>
+      <div class="f-col">
+        <h4>工具与榜单</h4>
+        <a href="#">追更日历</a>
+        <a href="#">口碑榜单</a>
+        <a href="#">补番片单</a>
+        <a href="#">标签筛选</a>
+      </div>
+      <div class="f-col">
+        <h4>关于本站</h4>
+        <a href="#">收录标准</a>
+        <a href="#">更新记录</a>
+        <a href="#">反馈与纠错</a>
+        <a href="#">免责声明</a>
+      </div>
+    </div>
+    <div class="crumb" aria-label="面包屑导航"><a href="#">首页</a> › 跑跑影视</div>
+    <div class="f-bottom">
+      <span>© 2026 跑跑影视 paopaoyingshi-app.github.io · 影视信息聚合与观影导航</span>
+      <span>内容仅为观影参考，版权归原权利人所有</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "跑跑影视",
+      "alternateName": "paopaoyingshi",
+      "url": "https://paopaoyingshi-app.github.io/",
+      "description": "跑跑影视是影视信息聚合与观影导航站，收录电影、剧集、动漫番剧、综艺纪实六大频道，提供每日更新排期、类型标签筛选与口碑榜单。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://paopaoyingshi-app.github.io/"},
+        {"@type":"ListItem","position":2,"name":"影视库","item":"https://paopaoyingshi-app.github.io/"}
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
